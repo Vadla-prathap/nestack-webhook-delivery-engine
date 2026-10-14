@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: nestack-webhook-delivery-engine
+    name: prathap-webhook-engine-20261015
     runtime: node
     plan: starter
     buildCommand: npm install
