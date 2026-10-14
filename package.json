@@ -1,0 +1,23 @@
+{
+  "name": "nestack-webhook-delivery-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Webhook delivery engine with retries and HMAC signing",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.9.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ipaddr.js": "^2.5.0"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.9.0": true
+  }
+}

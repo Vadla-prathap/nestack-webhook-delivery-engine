@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: nestack-webhook-delivery-engine
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    disk:
+      name: webhook-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_PATH
+        value: /var/data/webhooks.sqlite
+      - key: WEBHOOK_SECRET
+        sync: false
+      - key: WORKER_POLL_INTERVAL_MS
+        value: "1000"
+      - key: DELIVERY_TIMEOUT_MS
+        value: "10000"
